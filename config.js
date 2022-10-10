@@ -1,7 +1,7 @@
 //Main data
-exports.domain="https://netagrow.cloud";
+exports.domain="https://netagrow.cloud;
 exports.APP_NAME="Netagrow Client";
-exports.LOGO="https://www.google.com/url?sa=i&url=https%3A%2F%2Fzm.linkedin.com%2Fcompany%2Fnetagrow-technologies%3Ftrk%3Dpublic_profile_experience-item_profile-section-card_image-click&psig=AOvVaw2zooO5Jj30bp5m9tQRp7i8&ust=1665511777391000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIDl8Yuh1voCFQAAAAAdAAAAABAJ";
+exports.LOGO="https://netagrow.cloud/uploads/settings/d1e1bbaf-6a44-49b2-974e-e85272e10f8f_logo.jpg";
 exports.LOGOWidth=487;
 exports.LOGOHeight=144;
 

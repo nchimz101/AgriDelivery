@@ -5,6 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { AppLoading } from "expo";
 import * as Font from 'expo-font';
 import { Asset } from "expo-asset";
+import Toast from 'react-native-toast-message'
 import { NavigationContainer } from "@react-navigation/native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -85,6 +86,7 @@ export default class App extends React.Component {
   render() {
     if (this.state.fontsLoaded) {
       return (
+        <>
         <NavigationContainer>
           <GalioProvider theme={argonTheme}>
             <SharedStateProvider>
@@ -94,7 +96,8 @@ export default class App extends React.Component {
             </SharedStateProvider>
           </GalioProvider>
         </NavigationContainer>
-        
+        <Toast />
+        </>
       );
     }else{
       return null;

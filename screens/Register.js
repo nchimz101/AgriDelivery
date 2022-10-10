@@ -15,7 +15,6 @@ import { AsyncStorage } from 'react-native';
 import AppEventEmitter from '../functions/emitter';
 const { width, height } = Dimensions.get("screen");
 import API from "./../services/api"
-import Toast, {DURATION} from 'react-native-easy-toast'
 import User from './../services/user';
 import AuthContext from './../store/auth'
 import { ThemeProvider } from "@react-navigation/native";
@@ -30,8 +29,6 @@ class Register extends React.Component {
         phone:"",
         name:""
     };
-    this.toastok = React.createRef();
-    this.toasterror = React.createRef();
    
   }
 
@@ -149,7 +146,7 @@ class Register extends React.Component {
                     <Block middle>
                       <AuthContext.Consumer>
                       {({  signUp }) => (
-                          <Button color="primary" style={styles.createButton} onPress={()=> signUp({email:this.state.email,password:this.state.password,name:this.state.name,phone:this.state.phone,toastok:this.toastok,toasterror:this.toasterror})}>
+                          <Button color="primary" style={styles.createButton} onPress={()=> signUp({email:this.state.email,password:this.state.password,name:this.state.name,phone:this.state.phone})}>
                               <Text bold size={14} color={argonTheme.COLORS.WHITE}>
                                 {Language.register}
                               </Text>
@@ -164,8 +161,6 @@ class Register extends React.Component {
             </Block>
           </Block>
         </ImageBackground>
-        <Toast ref={this.toastok} style={{backgroundColor:argonTheme.COLORS.SUCCESS}}/>
-        <Toast ref={this.toasterror} style={{backgroundColor:argonTheme.COLORS.ERROR}}/>
       </Block>
     );
   }

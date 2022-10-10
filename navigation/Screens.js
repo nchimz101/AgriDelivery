@@ -81,14 +81,15 @@ export default function App({ navigation }) {
            if(responseJson.status){
              //User ok
              User.setLoggedInUser(responseJson,()=>{
-              data.toastok.current.show(Language.userIsNowLoggedIn, 2000, () => {
-                dispatch({ type: 'SIGN_IN', token: responseJson.token });
-              });
+              dispatch({ type: 'SIGN_IN', token: responseJson.token });
               
              })
            }else{
              //Not ok
-             data.toasterror.current.show(responseJson.message?responseJson.message:responseJson.errMsg, 2000, () => {});
+             Toast.show({
+              type: 'error',
+              text2: responseJson.message?responseJson.message:responseJson.errMsg
+            });
            }
          });
       },
@@ -104,14 +105,21 @@ export default function App({ navigation }) {
               //User ok - but needs admin approval
               User.logout(()=>{
                 dispatch({ type: 'SIGN_OUT' })
-                data.toasterror.current.show(Language.VendorCreated, 2000, () => {});
+                Toast.show({
+                  type: 'error',
+                  text2: Language.VendorCreated
+                });
+                
               })
               
               
                
            }else{
              //Not ok
-             data.toasterror.current.show(JSON.stringify(responseJson.errMsg), 2000, () => {});
+             Toast.show({
+              type: 'error',
+              text2: JSON.stringify(responseJson.errMsg)
+            });
            }
            
            

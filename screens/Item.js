@@ -16,7 +16,7 @@ import { Images, argonTheme } from "../constants";
 import { HeaderHeight } from "../constants/utils";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const { width, height } = Dimensions.get("screen");
-import Toast, {DURATION} from 'react-native-easy-toast'
+import Toast from 'react-native-toast-message';
 import { Checkbox } from 'galio-framework';
 
 import Cart from './../services/cart';
@@ -104,13 +104,20 @@ class Item extends React.Component {
 
     var _this=this;
     Cart.addCartContent(itemToAdd,(error=null)=>{
-      this.refs.toast.show(_this.state.qty==1?Language.itemAddedInCart:_this.state.qty+" "+Language.itemsAddedInCart, 1500, () => {
-        _this.props.navigation.goBack();
+      console.log("Added in cart");
+      Toast.show({
+        type: 'success',
+        text1: _this.state.qty==1?Language.itemAddedInCart:_this.state.qty+" "+Language.itemsAddedInCart
       });
+     
+      
       
     },(message)=>{
       //Error occured
-      this.refs.toasterror.show(message, 2000, () => {});
+      Toast.show({
+        type: 'error',
+        text2: message
+      });
     });
     
   }
@@ -369,8 +376,6 @@ class Item extends React.Component {
           </ImageBackground>
 
         </Block>
-        <Toast ref="toast" style={{backgroundColor:argonTheme.COLORS.SUCCESS}}/>
-        <Toast ref="toasterror" style={{backgroundColor:argonTheme.COLORS.ERROR}}/>
       </Block>
     );
   }

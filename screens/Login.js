@@ -14,7 +14,6 @@ import { Button, Icon, Input } from "../components";
 import { Images, argonTheme, Language } from "../constants";
 import { TouchableOpacity } from "react-native-gesture-handler";
 const { width, height } = Dimensions.get("screen");
-import Toast from 'react-native-easy-toast'
 import AuthContext from './../store/auth'
 import * as Notifications from 'expo-notifications';
 import * as Device from 'expo-device';
@@ -46,8 +45,6 @@ const getPushToken = () => {
 
 const Login = ({navigation}) => {
  
-  const toastok = useRef(null);
-  const toasterror = useRef(null);
 
   const { signIn } = useContext(AuthContext);
   const [email, setEmail ] = useState("");
@@ -149,7 +146,7 @@ const Login = ({navigation}) => {
                     
                     
                     <Block middle>
-                      <Button color="primary" style={styles.createButton} onPress={()=> signIn({email:email,password:password,expoPushToken:expoPushToken,toastok:toastok,toasterror:toasterror})}>
+                      <Button color="primary" style={styles.createButton} onPress={()=> signIn({email:email,password:password,expoPushToken:expoPushToken})}>
                         <Text bold size={14} color={argonTheme.COLORS.WHITE}>
                         {Language.login}
                         </Text>
@@ -165,8 +162,6 @@ const Login = ({navigation}) => {
             </Block>
           </Block>
         </ImageBackground>
-        <Toast ref={toastok} style={{backgroundColor:argonTheme.COLORS.SUCCESS}}/>
-        <Toast ref={toasterror} style={{backgroundColor:argonTheme.COLORS.ERROR}}/>
       </Block>
   );
 };
