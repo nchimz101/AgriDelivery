@@ -1,5 +1,5 @@
 //Main data
-exports.domain="https://netagrow.cloud;
+exports.domain="https://netagrow.cloud";
 exports.APP_NAME="Netagrow Client";
 exports.LOGO="https://netagrow.cloud/uploads/settings/d1e1bbaf-6a44-49b2-974e-e85272e10f8f_logo.jpg";
 exports.LOGOWidth=487;
