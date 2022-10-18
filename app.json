@@ -23,11 +23,16 @@
       },
       "bundleIdentifier": "com.dimovdaniel.mobidonia",
       "supportsTablet": false,
-      "buildNumber":"1.1"
+      "buildNumber": "1.1"
     },
     "android": {
       "package": "com.dimovdaniel.mobidonia"
     },
-    "description": ""
+    "description": "",
+    "extra": {
+      "eas": {
+        "projectId": "4d3f0334-aaae-494d-a367-1264fb990ff0"
+      }
+    }
   }
 }

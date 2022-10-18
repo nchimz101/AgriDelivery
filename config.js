@@ -17,7 +17,7 @@ exports.dateFormat="MMMM Do YYYY";
 
 //Registering
 exports.disableRegister=false; //Set to true if you want to remove the option to register from mobile app
-exports.APP_SECRET="app_secret";
+exports.APP_SECRET="6ffee8f4-f3c0-4e47-96bc-3cc251ed2ba6";
 
 
 //Optional
