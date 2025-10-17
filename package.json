@@ -30,7 +30,7 @@
     "appcenter-analytics": "4.4.5",
     "appcenter-crashes": "4.4.5",
     "deprecated-react-native-prop-types": "^2.3.0",
-    "expo": "^46.0.0",
+    "expo": "^48.0.0",
     "expo-asset": "~8.6.1",
     "expo-device": "~4.3.0",
     "expo-font": "~10.2.0",
